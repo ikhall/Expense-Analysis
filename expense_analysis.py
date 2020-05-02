@@ -2,8 +2,9 @@ import pandas as pd
 import matplotlib as matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
+import paths
 
-rawData = pd.read_csv('General Ledger Report (59).csv')
+rawData = pd.read_csv(paths.getWorkFile)
 to_drop = ['Txn No', 'Curr', 'Balance (USD)']
 rawData.drop(to_drop, inplace=True, axis=1)
 df = pd.DataFrame(rawData)
