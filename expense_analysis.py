@@ -1,14 +1,15 @@
-# import csv
 import pandas as pd
 import matplotlib as matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 
 rawData = pd.read_csv('General Ledger Report (59).csv')
-
 to_drop = ['Txn No', 'Curr', 'Balance (USD)']
 rawData.drop(to_drop, inplace=True, axis=1)
 df = pd.DataFrame(rawData)
+
+
+
 pd.to_numeric(df['Txn Amt'])
 pd.to_numeric(df['Debit (USD)'])
 pd.to_numeric(df['Credit (USD)'])
